@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Step 1: Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+
+  <!-- Link to our CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Weather icons from a free icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Main container that holds everything -->
+  <div class="container">
+
+    <h1 class="app-title">🌤 Weather App</h1>
+
+    <!-- Step 2: Search Box -->
+    <!-- User types a city name here and clicks Search -->
+    <div class="search-box">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name..."
+      />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Step 3: Error message (hidden by default) -->
+    <!-- This shows up if the city is not found -->
+    <p id="errorMsg" class="error hidden">City not found. Please try again.</p>
+
+    <!-- Step 4: Weather Result Card (hidden until data loads) -->
+    <div id="weatherCard" class="weather-card hidden">
+
+      <!-- City name and country -->
+      <h2 id="cityName">London, GB</h2>
+
+      <!-- Weather icon (e.g. sunny, cloudy) -->
+      <img id="weatherIcon" src="" alt="weather icon" />
+
+      <!-- Main temperature -->
+      <p id="temperature" class="temp">--°C</p>
+
+      <!-- Short description like "Clear Sky" -->
+      <p id="description" class="desc">--</p>
+
+      <!-- Extra details row: humidity and wind speed -->
+      <div class="details">
+        <div class="detail-item">
+          <i class="fa-solid fa-droplet"></i>
+          <span id="humidity">--%</span>
+          <small>Humidity</small>
+        </div>
+        <div class="detail-item">
+          <i class="fa-solid fa-wind"></i>
+          <span id="windSpeed">-- km/h</span>
+          <small>Wind Speed</small>
+        </div>
+      </div>
+
+    </div><!-- end weatherCard -->
+
+  </div><!-- end container -->
+
+  <!-- Link to our JavaScript file (at the bottom so HTML loads first) -->
+  <script src="script.js"></script>
+
+</body>
+</html>

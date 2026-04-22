@@ -1,0 +1,172 @@
+/* STEP 1: Reset default browser styles
+   This makes sure all browsers look the same*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*STEP 2: Style the page background
+   We use a gradient from deep blue to teal*/
+body {
+  min-height: 100vh;              /* Full screen height */
+  display: flex;
+  justify-content: center;        /* Center horizontally */
+  align-items: center;            /* Center vertically */
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/*STEP 3: Main wrapper container*/
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* STEP 4: App title */
+.app-title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+/* STEP 5: Search Box (input + button side by side)
+   We use flexbox to put them in one row*/
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* The text input field */
+.search-box input {
+  flex: 1;                        /* Takes up most of the space */
+  padding: 12px 16px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+}
+
+/* Placeholder text color */
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* The search button */
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #e94560;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;  /* Smooth color change on hover */
+}
+
+/* Button hover effect */
+.search-box button:hover {
+  background: #c73652;
+}
+
+/*STEP 6: Error message styling*/
+.error {
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* STEP 7: Weather result card
+   A semi-transparent glass-like card*/
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px);    /* Frosted glass effect */
+  animation: fadeIn 0.5s ease;    /* Smooth appear animation */
+}
+
+/* City name inside the card */
+.weather-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+/* Weather icon image */
+.weather-card img {
+  width: 90px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Temperature text */
+.temp {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+/* Description text (e.g. "Broken Clouds") */
+.desc {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+/* STEP 8: Details row (Humidity + Wind)
+   Two boxes side by side using flexbox*/
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+/* Each detail box */
+.detail-item {
+  display: flex;
+  flex-direction: column;         /* Stack icon, value, label vertically */
+  align-items: center;
+  gap: 6px;
+}
+
+/* Icon style */
+.detail-item i {
+  font-size: 1.4rem;
+  color: #e94560;
+}
+
+/* Value (e.g. "72%") */
+.detail-item span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Label (e.g. "Humidity") */
+.detail-item small {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/*STEP 9: Utility classes*/
+
+/* .hidden = not visible (we add/remove this with JS) */
+.hidden {
+  display: none;
+}
+
+/* Smooth fade-in animation for the card */
+@keyframes fadeIn {
+ 
+ 
+ 
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
